@@ -23,7 +23,7 @@ module "eks" {
   name   = "DEMO"
   suffix = "EKS"
 
-  kubernetes_version = "1.14"
+  kubernetes_version = "1.16"
 
   vpc_id = "vpc-09f37431d9b6acffa"
 
