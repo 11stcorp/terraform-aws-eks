@@ -89,3 +89,7 @@ data "aws_caller_identity" "current" {
 output "config" {
   value = module.eks.config
 }
+
+output "aws_auth" {
+  value = module.eks.aws_auth
+}

@@ -15,3 +15,7 @@ output "efs_id" {
 output "buckets" {
   value = aws_s3_bucket.buckets.*.bucket
 }
+
+output "aws_auth" {
+  value = local.aws_auth
+}
