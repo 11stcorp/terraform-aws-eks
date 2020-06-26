@@ -10,7 +10,7 @@ resource "null_resource" "executor" {
 echo "${null_resource.executor.triggers.aws_auth}" > aws_auth.yaml & \
 echo "${null_resource.executor.triggers.kube_config}" > kube_config.yaml & \
 for i in `seq 1 10`; do \
-  kubectl apply -f aws_auth.yaml --kubeconfig kube_config.yaml && break || sleep 10; \
+  /bin/sh -c kubectl apply -f aws_auth.yaml --kubeconfig kube_config.yaml && break || sleep 10; \
 done; \
 rm -rf aws_auth.yaml kube_config.yaml
 EOS
