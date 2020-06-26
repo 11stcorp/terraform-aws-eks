@@ -43,7 +43,7 @@ module "eks" {
 
   associate_public_ip_address = true
 
-  instance_type = "m5.large"
+  instance_type = "m4.large"
 
   mixed_instances = ["m5.large", "r5.large", "c5.large"]
 
