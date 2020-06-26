@@ -66,3 +66,6 @@ kubectl get all --all-namespaces
 EOF
 
 }
+locals {
+  aws_auth = data.template_file.aws_auth.rendered
+}
