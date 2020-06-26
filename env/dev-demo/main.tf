@@ -75,6 +75,11 @@ module "eks" {
       username = "demo-user"
       group    = "system:masters"
     },
+    {
+      user     = "user/tfuser-api"
+      username = "tfuser-api"
+      group    = "system:masters"
+    },
   ]
 }
 
