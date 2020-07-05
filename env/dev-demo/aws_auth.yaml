@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::228325622425:role/SEOUL-DEV-DEMO-EKS-WORKER
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+    - rolearn: arn:aws:iam::228325622425:role/SEOUL-DEV-DEMO-BASTION
+      username: iam-role-bastion
+
+      groups:
+        - system:masters
+
+
+
+
+  mapUsers: |
+
+    - userarn: arn:aws:iam::228325622425:user/demo-user
+      username: demo-user
+
+      groups:
+        - system:masters
+
+    - userarn: arn:aws:iam::228325622425:user/tfuser-api
+      username: tfuser-api
+
+      groups:
+        - system:masters
+
